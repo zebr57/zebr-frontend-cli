@@ -1,11 +1,33 @@
 # zebr-frontend-cli
 
-前端脚手架，快速创建项目模版，提高前期开发效率。
+前端脚手架工具，快速创建项目模版，提高前期开发效率。
 
 ## 功能
 
 - 快速创建项目模版
-- 在编辑器打开项目并启动本地服务
+- 在 vscode 打开项目并启动本地服务
+
+## 安装
+
+1. 克隆项目：https://github.com/zebr57/zebr-frontend-cli.git
+
+2. 终端进入项目所在目录
+
+```sh
+cd zebr-frontend-cli
+```
+
+3. 安装依赖
+
+```sh
+pnpm install
+```
+
+4. 通过 npm 本地安装（暂未在 npm 上发包）
+
+```sh
+npm link
+```
 
 ## 提示帮助
 
@@ -22,8 +44,8 @@ zebr-cli create <name>
 ```
 
 - 命令行窗口进入目录地址，输入执行
-- 根据提示选择项目模版（vue3+Ts、react等）
-- 通过git仓库地址拷贝项目
+- 根据提示选择项目模版（vue3+Ts、react 等）
+- 通过 git 仓库地址拷贝项目至本地
 
 ## 在编辑器打开项目并启动本地服务
 
@@ -31,6 +53,7 @@ zebr-cli create <name>
 zebr-cli open
 ```
 
+- 支持 window/MacOs 系统（win 需要检查是否配置了 vscode 的环境变量）
 - 命令行窗口进入项目地址
 - 自动在编辑器打开项目
 - 检测是否已初始化项目依赖
