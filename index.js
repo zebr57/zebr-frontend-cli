@@ -95,8 +95,8 @@ const runServer = async (runShell) => {
 program.command("open").action(async (name) => {
   try {
     // 功能1：打开编辑器 vscode
-    child_process.exec("code .");
-    // 功能2：启动项目
+    // child_process.exec("code .");
+    // 功能1：启动项目
     let runShell = await getToolShell(); // npm、yarn、pnpm
 
     const isExitsNodeModule = fse.existsSync(process.cwd() + "/node_modules");
@@ -113,13 +113,15 @@ program.command("open").action(async (name) => {
           name: "install"
         }
       ]);
-      if (!install) return;
+      if (!install) {
+        child_process.exec("code .");
+        return;
+      }
       // 询问是否自动安装依赖
       const { isAuto } = await inquirer.prompt([
         {
           type: "list",
-          message:
-            "是否根据项目文件自动选择包管理工具（yarn.lock、pnpm-lock.yaml）并安装依赖呢？",
+          message: "是否根据项目文件自动选择包管理工具（yarn.lock、pnpm-lock.yaml）并安装依赖呢？",
           choices: ["yes", "no"],
           default: "yes",
           name: "isAuto"
@@ -147,9 +149,10 @@ program.command("open").action(async (name) => {
         console.log(runShell + " install ", "success!"); // 提示安装成功
         runServer(runShell); // 安装成功启动服务
       });
+      child_process.exec("code .");
     } else {
       // 最后一步：开启服务
-      console.log("检测已安装依赖...");
+      child_process.exec("code .");
       runServer(runShell);
     }
   } catch (error) {
