@@ -159,4 +159,36 @@ program.command("open").action(async (name) => {
     console.error(error);
   }
 });
+
+/* ===================================== git commit ===================================== */
+
+program.command("commit").action(async () => {
+  child_process.exec("git add .", (err, stdout) => {
+    if (err) throw err;
+    
+    const _type = process.argv[3];
+    const _message = process.argv[4];
+
+    child_process.exec("git commit -m '" + _type + ": " + _message + "'", (err) => {
+      if (err) throw err;
+      // 询问是否推送代码
+      inquirer
+        .prompt([
+          {
+            type: "confirm",
+            message: "git push?",
+            name: "isPush"
+          }
+        ])
+        .then((res) => {
+          if (res.isPush) {
+            child_process.exec("git push", (err) => {
+              if (err) throw err;
+            });
+          }
+        });
+    });
+  });
+});
+
 program.parse(process.argv);
