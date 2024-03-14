@@ -33,10 +33,16 @@ npm link
 ## 提示帮助
 
 ```sh
+zebr
+# or
 zebr-cli
 ```
 
 - 获取提示，展示功能命令
+
+::: tip
+`zebr` 和 `zebr-cli` 命令是一样的，取决你的输入习惯，下面使用 `zebr-cli` 为例
+:::
 
 ## 创建项目
 
