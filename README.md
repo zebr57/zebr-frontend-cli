@@ -1,6 +1,6 @@
 # zebr-frontend-cli
 
-前端脚手架工具，快速创建项目模版，提高前期开发效率。
+前端脚手架、命令行工具，快速创建项目模版，提高前期开发效率。
 
 ## 功能
 
@@ -8,7 +8,15 @@
 - 在 vscode 打开项目并启动本地服务
 - 一行命令搞定 git 提交代码流程
 
-## 安装
+## 使用安装
+
+```bash
+npm i @zebr/zebr-frontend-cli -g
+```
+
+## 调试安装
+
+如果是通过 npm install 安装可跳过该部分，请前往如何使用
 
 1. 克隆项目：https://github.com/zebr57/zebr-frontend-cli.git
 
@@ -24,13 +32,13 @@ cd zebr-frontend-cli
 pnpm install
 ```
 
-4. 通过 npm 本地安装（暂未在 npm 上发包）
+4. 通过 npm 本地安装
 
 ```sh
 npm link
 ```
 
-## 提示帮助
+## 如何使用
 
 ```sh
 zebr

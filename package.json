@@ -1,7 +1,7 @@
 {
-  "name": "zebr-frontend-cli",
+  "name": "@zebr/zebr-frontend-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "前端脚手架工具，快速创建项目模版，提高前期开发效率。",
   "main": "index.js",
   "type": "module",
   "scripts": {
